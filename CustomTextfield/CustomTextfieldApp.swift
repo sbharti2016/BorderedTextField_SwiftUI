@@ -11,7 +11,17 @@ import SwiftUI
 struct CustomTextfieldApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                FirstView()
+                SecondView()
+                ThirdView()
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+            .onAppear {
+                UIPageControl.appearance().currentPageIndicatorTintColor = .black
+                UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+            }
+//            .edgesIgnoringSafeArea(.bottom)
         }
     }
 }

@@ -9,16 +9,19 @@ import SwiftUI
 
 struct BorderedTextFieldView: View {
     @Binding var text: String
-    let placeHolder: String
-    let font: Font
+    private let placeHolder: String
+    private let font: Font
+    private let isSecure: Bool
+    
+    @State private var showPressed = false
     
     @FocusState private var isFocused: Bool
     
-    
-    init(text: Binding<String>, placeHolder: String = "", font: Font = .body) {
+    init(text: Binding<String>, placeHolder: String = "", font: Font = .body, isSecure: Bool = false) {
         _text = text
         self.placeHolder = placeHolder
         self.font = font
+        self.isSecure = isSecure
     }
     
     var body: some View {
@@ -27,21 +30,30 @@ struct BorderedTextFieldView: View {
     }
     
     private var textFieldView: some View {
-        VStack(alignment: .leading) {
-            TextField(placeHolder, text: $text)
-                .font(font)
-                .focused($isFocused)
+        ZStack {
+            VStack(alignment: .leading) {
+                if isSecure, showPressed == false {
+                    SecureField(placeHolder, text: $text)
+                } else {
+                    TextField(placeHolder, text: $text)
+                }
+            }
+            .font(font)
+            .focused($isFocused)
+            .padding()
+            .padding(.trailing, isSecure ? 30 : 0)
+            .overlay(content: {
+                oulineView
+            })
+            showHideButtonView
         }
-        .padding()
-        .overlay(content: {
-            oulineView
-        })
     }
     
     private var oulineView: some View {
         ZStack(alignment: .leading, content: {
             RoundedRectangle(cornerRadius: 8.0)
-                .stroke((isFocused || text.count > 0) ? .black : .gray, lineWidth: (isFocused || text.count > 0) ? 1.5 : 0.5)
+                .stroke((isFocused || text.count > 0) ? Color.primary : Color.gray,
+                        lineWidth: (isFocused || text.count > 0) ? 1.0 : 0.5)
             tagView
         })
     }
@@ -49,11 +61,12 @@ struct BorderedTextFieldView: View {
     private var tagView: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(placeHolder)
+                Text(placeHolder.replacingOccurrences(of: "Enter ", with: ""))
                     .font(.footnote)
                     .fontWeight(.medium)
                     .padding(.horizontal, 3.0)
-                    .background(.white)
+                    .foregroundColor(.primary.opacity(0.5))
+                    .background(Color(uiColor: .systemBackground))
                     .offset(y: text.count > 0 ? -8.0 : 0.0)
                     .opacity(text.count > 0 ? 1.0 : 0.0)
                     .animation(.bouncy, value: text.count > 0)
@@ -62,9 +75,36 @@ struct BorderedTextFieldView: View {
             Spacer()
         }
     }
+    
+    private var showHideButtonView: some View {
+        return ZStack {
+            if isSecure {
+                HStack {
+                    Spacer()
+                    Button {
+                        showPressed.toggle()
+                    } label: {
+                        Text(showPressed ? "Hide" : "Show")
+                            .font(.footnote)
+                            .padding(4.0)
+                            .background(Color.secondary)
+                            .foregroundStyle(.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 4.0))
+                            
+                    }
+                }
+                .padding(.trailing, 8.0)
+            }
+        }
+    }
 }
 
 #Preview {
-    BorderedTextFieldView(text: .constant(""))
-        .padding()
+    
+    VStack(spacing: 25) {
+        BorderedTextFieldView(text: .constant("test"), placeHolder: "Enter Name", isSecure: false)
+        BorderedTextFieldView(text: .constant("test"), placeHolder: "Enter Password", isSecure: true)
+    }
+    .padding()
+    
 }

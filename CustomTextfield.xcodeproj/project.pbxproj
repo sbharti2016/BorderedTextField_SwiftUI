@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FD058AA2B06479C00886815 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD058A82B06479C00886815 /* SecondView.swift */; };
+		1FD058AB2B06479C00886815 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD058A92B06479C00886815 /* ThirdView.swift */; };
 		1FE201A22AF903CF00888E0F /* BorderedTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE201A12AF903CF00888E0F /* BorderedTextFieldView.swift */; };
 		1FE3B4A02AF7BC8200A0E349 /* CustomTextfieldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3B49F2AF7BC8200A0E349 /* CustomTextfieldApp.swift */; };
-		1FE3B4A22AF7BC8200A0E349 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3B4A12AF7BC8200A0E349 /* ContentView.swift */; };
+		1FE3B4A22AF7BC8200A0E349 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3B4A12AF7BC8200A0E349 /* FirstView.swift */; };
 		1FE3B4A42AF7BC8400A0E349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3B4A32AF7BC8400A0E349 /* Assets.xcassets */; };
 		1FE3B4A72AF7BC8400A0E349 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3B4A62AF7BC8400A0E349 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FD058A82B06479C00886815 /* SecondView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		1FD058A92B06479C00886815 /* ThirdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
 		1FE201A12AF903CF00888E0F /* BorderedTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextFieldView.swift; sourceTree = "<group>"; };
 		1FE3B49C2AF7BC8200A0E349 /* CustomTextfield.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTextfield.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE3B49F2AF7BC8200A0E349 /* CustomTextfieldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextfieldApp.swift; sourceTree = "<group>"; };
-		1FE3B4A12AF7BC8200A0E349 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1FE3B4A12AF7BC8200A0E349 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		1FE3B4A32AF7BC8400A0E349 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FE3B4A62AF7BC8400A0E349 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,7 +58,9 @@
 			isa = PBXGroup;
 			children = (
 				1FE3B49F2AF7BC8200A0E349 /* CustomTextfieldApp.swift */,
-				1FE3B4A12AF7BC8200A0E349 /* ContentView.swift */,
+				1FE3B4A12AF7BC8200A0E349 /* FirstView.swift */,
+				1FD058A82B06479C00886815 /* SecondView.swift */,
+				1FD058A92B06479C00886815 /* ThirdView.swift */,
 				1FE201A12AF903CF00888E0F /* BorderedTextFieldView.swift */,
 				1FE3B4A32AF7BC8400A0E349 /* Assets.xcassets */,
 				1FE3B4A52AF7BC8400A0E349 /* Preview Content */,
@@ -140,8 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FE3B4A22AF7BC8200A0E349 /* ContentView.swift in Sources */,
+				1FE3B4A22AF7BC8200A0E349 /* FirstView.swift in Sources */,
+				1FD058AB2B06479C00886815 /* ThirdView.swift in Sources */,
 				1FE3B4A02AF7BC8200A0E349 /* CustomTextfieldApp.swift in Sources */,
+				1FD058AA2B06479C00886815 /* SecondView.swift in Sources */,
 				1FE201A22AF903CF00888E0F /* BorderedTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
