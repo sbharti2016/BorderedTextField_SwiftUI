@@ -17,7 +17,7 @@ struct SecondView: View {
         
         VStack(alignment: .leading, spacing: 20.0) {
             Text("Custom Textfield with `body` font").font(.title)
-            BorderedTextFieldView(text: $employeeID, placeHolder: "Enter Id")
+            BorderedTextFieldView(text: $employeeID, placeHolder: "Enter Name")
             BorderedTextFieldView(text: $employeeID, placeHolder: "Enter Password", font: .body, isSecure: true)
         }
         .padding()

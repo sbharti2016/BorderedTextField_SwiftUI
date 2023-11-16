@@ -100,11 +100,9 @@ struct BorderedTextFieldView: View {
 }
 
 #Preview {
-    
     VStack(spacing: 25) {
         BorderedTextFieldView(text: .constant("test"), placeHolder: "Enter Name", isSecure: false)
         BorderedTextFieldView(text: .constant("test"), placeHolder: "Enter Password", isSecure: true)
     }
     .padding()
-    
 }

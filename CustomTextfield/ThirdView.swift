@@ -17,7 +17,7 @@ struct ThirdView: View {
         
         VStack(alignment: .leading, spacing: 20.0) {
             Text("Custom Textfield with `footnote` font").font(.title)
-            BorderedTextFieldView(text: $employeeDept, placeHolder: "Enter Department", font: .footnote)
+            BorderedTextFieldView(text: $employeeDept, placeHolder: "Enter Name", font: .footnote)
             BorderedTextFieldView(text: $employeeDept, placeHolder: "Enter Password", font: .footnote, isSecure: true)
             
         }

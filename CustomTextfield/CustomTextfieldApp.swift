@@ -18,10 +18,9 @@ struct CustomTextfieldApp: App {
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
             .onAppear {
-                UIPageControl.appearance().currentPageIndicatorTintColor = .black
-                UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+                UIPageControl.appearance().currentPageIndicatorTintColor = .gray
+                UIPageControl.appearance().pageIndicatorTintColor = UIColor.gray.withAlphaComponent(0.2)
             }
-//            .edgesIgnoringSafeArea(.bottom)
         }
     }
 }
